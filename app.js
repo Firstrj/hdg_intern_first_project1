@@ -5,9 +5,9 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/product', require('./routes/productRoutes'));
 
-mongoose.connect('mongodb+srv://Admin:zxc123@cluster0.bmij8m0.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
   })
