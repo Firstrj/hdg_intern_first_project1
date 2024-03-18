@@ -1,13 +1,14 @@
 const express = require('express');
 const { default: mongoose } = require('mongoose');
 const app = express();
+require('dotenv').config();
 const { MONGOLINKURL } = process.env
 
 app.use(express.json());
 
 app.use('/api/product', require('./routes/productRoutes'));
 
-mongoose.connect( MONGOLINKURL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect( MONGOLINKURL , { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to MongoDB');
   })
