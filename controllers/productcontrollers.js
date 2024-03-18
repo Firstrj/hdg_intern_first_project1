@@ -21,7 +21,7 @@ const getAllProducts = async (req, res) => {
   }
 };
 
-// Controller to handle getting a single product by ID
+// Controller to handle getting a single product 
 const getProductById = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -34,7 +34,7 @@ const getProductById = async (req, res) => {
   }
 };
 
-// Controller to handle updating a product by ID
+// Controller to handle updating a product 
 const updateProduct = async (req, res) => {
   try {
     const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
